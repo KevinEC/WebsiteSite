@@ -101,7 +101,7 @@ module.exports = {
 			chunkFilename: "[id].css"
 		}),
 		new ExtractTextWebpackPlugin({
-			filename: "style.css"
+			filename: "[name].css"
 		}),
 		new TransferWebpackPlugin([
 	      { from: 'dist' },
