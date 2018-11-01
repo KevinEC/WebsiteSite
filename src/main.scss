@@ -14,10 +14,95 @@
 @import "~bootstrap/scss/grid";
 
 // Additional
-@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/alert";
-$primary: orange;
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/buttons";
+
+$logo-x: 716px;
+$logo-y: 252px;
+
+$normal-trans: .15s;
+$fast-trans: .1s;
+
+/* global standards */
+
+button { cursor: pointer; }
 
 body {
-	background-color: $primary;
+	margin: 0;
+	padding: 0;
+}
+
+/* CSS in top down order */
+
+header {
+	width: 100%;
+	height: 100vh;
+
+	background-image: url('../assets/views_comp.jpg');
+	background-size: cover;
+	background-position: center;
+}
+header .container{
+	margin-top: 33vh;
+}
+
+#logo {
+	filter: invert(100%);
+}
+#logo img{
+	width: calc(#{$logo-x} * 0.85);
+	height: calc(#{$logo-y} * 0.85); 
+}
+
+.buttons{
+	width: 300px;
+}
+.btn-trans {
+	padding: 15px 40px;
+	border: 2px solid $light;
+	border-radius: $border-radius;
+	background: transparent;
+	color: $light;
+	cursor: pointer;
+
+	transition-property: border-radius, background, color;
+	transition-duration: $normal-trans;
+	transition-timing-function: ease-in; 
+}
+
+.btn-trans:hover {
+	border-radius: 0px;
+	background: $light;
+	color: $dark;
+}
+
+.scroll{
+	margin-top: auto;
+}
+
+.scroll div {
+	height: 100px;
+	padding-top: 0px;
+
+	transition-property: padding-top;
+	transition-duration: $fast-trans;
+	transition-timing-function: ease-out;
+}
+
+//dummy div to prevent animantion loop
+.scroll div:hover{
+	padding-top: 20px;
+}
+
+.scroll button{
+	width: 100px;
+	height: 70px;
+	background-image: url(../assets/wide_arrow.png);
+	background-position: center;
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }

@@ -1,7 +1,34 @@
-$secondary: pink;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+//@import "~bootstrap/scss/variables";
+
+/*$theme-colors: (
+  "trans": transparent
+);*/
 
 $enable-rounded: false;
+$border-radius: 2px;
 
-$theme-colors: (
-	"primary": pink
-);
+/* FONTS */
+$font-family-sans-serif:      'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       'Open Sans', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+/* NAVBAR */
+$navbar-padding-x: 50px;
+$navbar-padding-y: 50px;
+
+.navbar{
+	height: 100px;
+}
+
+header .navbar {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.bg-trans {
+	background: linear-gradient(#1d1d1d, transparent);
+}
+
+
