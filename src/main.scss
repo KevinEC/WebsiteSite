@@ -2,7 +2,7 @@
 @import "custom_bootstrap";
 
 // Required
-@import "~bootstrap/scss/functions";
+
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
@@ -19,11 +19,7 @@
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/buttons";
 
-$logo-x: 716px;
-$logo-y: 252px;
 
-$normal-trans: .15s;
-$fast-trans: .1s;
 
 /* global standards */
 
@@ -88,7 +84,7 @@ header .container{
 
 	transition-property: padding-top;
 	transition-duration: $fast-trans;
-	transition-timing-function: ease-out;
+	transition-timing-function: cubic-bezier(0, 1, 0.7, -0.68);
 }
 
 //dummy div to prevent animantion loop
