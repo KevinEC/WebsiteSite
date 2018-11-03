@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300i,400,600,700');
 //@import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/functions";
 
@@ -11,7 +11,9 @@ $fast-trans: .1s;
 
 
 $theme-colors: (
-  "primary": #ffd15e
+  "primary": #ffd15e,
+  "dark": #111111,
+  "off-white": #fff8e8
 );
 
 $enable-rounded: false;

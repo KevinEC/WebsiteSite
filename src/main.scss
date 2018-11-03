@@ -20,6 +20,12 @@
 @import "~bootstrap/scss/buttons";
 
 
+// Extract Bootstrap theme colors for easier var names
+$dark: theme-color("dark");
+$primary: theme-color("primary");
+$off-white: theme-color("off-white");
+$light: theme-color("light");
+
 
 /* global standards */
 
@@ -36,7 +42,7 @@ header {
 	width: 100%;
 	height: 100vh;
 
-	background-image: url('../assets/views_comp.jpg');
+	background-image: url('../assets/views.jpg');
 	background-size: cover;
 	background-position: center;
 }
@@ -84,7 +90,7 @@ header .container{
 
 	transition-property: padding-top;
 	transition-duration: $fast-trans;
-	transition-timing-function: cubic-bezier(0, 1, 0.7, -0.68);
+	transition-timing-function: ease-out;
 }
 
 //dummy div to prevent animantion loop
@@ -95,10 +101,69 @@ header .container{
 .scroll button{
 	width: 100px;
 	height: 70px;
-	background-image: url(../assets/wide_arrow.png);
+	background-image: url("../assets/wide_arrow.png"); 
 	background-position: center;
 	background-size: cover;
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
+}
+
+/* QOUTE DIVIDER */
+$qoute-divider-height: 12rem;
+//pic size definde by 100% of bg + 30%
+$pic-size: calc(#{$qoute-divider-height} * 1.3);
+// margin defined by pic-size overflow of 30% + an additional third of the bg height
+$pic-margin: calc(#{$qoute-divider-height} * calc(0.3 + 0.333) );
+
+.qoute {
+	background-color: $dark;
+	height: $qoute-divider-height;
+}
+
+.profile-container{
+	width: 20vw;
+	margin-top: $pic-margin;
+}
+
+.profile-border{
+	border-radius: 100%;
+
+	background-color: rgba($light, 0.6);
+	width: $pic-size;
+	height: $pic-size;
+	overflow: hidden;
+	padding: 0.5rem;
+}
+
+.profile-pic{
+	border-radius: 100%;
+
+	background-image: url(../assets/profile.jpg);
+	background-size: cover;
+	background-position: 30% 50%;
+	width: 100%;
+	height: 100%;
+
+}
+
+.qoute .container{
+	height: 100%;
+}
+.qoute-container{
+	width: 40vw;
+	color: $off-white;
+	//background-color: $primary; low key fire
+}
+.qoute-icon{
+	font-family: 'Times New Roman';
+	font-size: 10rem;
+	font-weight: 700;
+}
+.qoute-text{
+	font-style: italic;
+	font-weight: $font-weight-light;
+	font-size: $h5-font-size;
+
+	margin-left: 20px;
 }
