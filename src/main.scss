@@ -25,6 +25,7 @@ $dark: theme-color("dark");
 $primary: theme-color("primary");
 $off-white: theme-color("off-white");
 $light: theme-color("light");
+$dark-grey: theme-color("dark-grey");
 
 
 /* global standards */
@@ -110,11 +111,11 @@ header .container{
 }
 
 /* QOUTE DIVIDER */
-$qoute-divider-height: 12rem;
+$qoute-divider-height: 25vh;
 //pic size definde by 100% of bg + 30%
-$pic-size: calc(#{$qoute-divider-height} * 1.3);
+$pic-size: calc(#{$qoute-divider-height} * 1.2);
 // margin defined by pic-size overflow of 30% + an additional third of the bg height
-$pic-margin: calc(#{$qoute-divider-height} * calc(0.3 + 0.333) );
+$pic-margin: calc(#{$qoute-divider-height} * calc(0.2 + 0.333) );
 
 .qoute {
 	background-color: $dark;
@@ -122,7 +123,7 @@ $pic-margin: calc(#{$qoute-divider-height} * calc(0.3 + 0.333) );
 }
 
 .profile-container{
-	width: 20vw;
+	width: $pic-size;
 	margin-top: $pic-margin;
 }
 
@@ -159,11 +160,173 @@ $pic-margin: calc(#{$qoute-divider-height} * calc(0.3 + 0.333) );
 	font-family: 'Times New Roman';
 	font-size: 10rem;
 	font-weight: 700;
+	margin-left: 20px;
 }
 .qoute-text{
 	font-style: italic;
 	font-weight: $font-weight-light;
-	font-size: $h5-font-size;
+	font-size: $h4-font-size; // h5 works great at smaller
 
 	margin-left: 20px;
+	line-height: 1.5;
+}
+
+/* ABOUT SECTION */
+
+$title-padding: 20px;
+$title-margin: calc(#{$title-padding} * 2);
+
+.about{
+	//use the same padding here as for pic to match the distance
+	padding-top: $pic-margin;
+	min-height: 75vh;
+}
+
+.title {
+	width: fit-content;
+	margin-bottom: $title-margin;
+}
+.title h2{
+	font-weight: 600;
+}
+.title::after {
+	content: '';
+	display: block;
+
+	margin-top: $title-padding;
+	width: 100%;
+	height: 3px;
+	border-radius: 1px;
+	background-color: $primary;
+}
+
+.about .btn{
+	width: 200px;
+	margin: 50px auto;
+	color: $light;
+	background-image: url(../assets/arrow.png);
+	background-size: 20%;
+	background-position: 18% 50%;
+	background-repeat: no-repeat;
+
+	transition: background-position $swift-trans ease-out;
+}
+.about .btn:hover{
+	background-position: 22%;
+}
+
+/* CHECK OUT MY MUSIC */
+$music-bg-height: 33vh;
+$music-bg-trans: 0.7;
+$spotify-icon-size: 130px;
+$soundcloud-icon-size: ($spotify-icon-size * 1.7);
+
+.music{
+	height: $music-bg-height;
+}
+//bg image layer
+.music-bg::after{
+	content: '';
+	display: block;
+	height: $music-bg-height;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: -2;
+
+	background-image: url(../assets/bw_photo.jpg);
+	background-position: 50% 0;
+	background-size: cover;
+
+}
+//color layer
+.music-bg::before{
+	content: '';
+	display: block;
+	height: $music-bg-height;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: -1;
+
+	background: linear-gradient(0.3turn, $dark, $primary);
+	opacity: 0.7;
+}
+.music .container{
+	height: 100%;
+}
+.music-text{
+	color: $light;
+}
+.music-text .title h2{
+	font-size: $h1-font-size;
+}
+.music-text h4{
+	font-weight: 200;
+	font-size: $h3-font-size;
+	display: inline-block;
+}
+.music-icons{
+	width: 40vw;
+	height: 100%;
+	margin-left: 5vw;
+}
+.music-icons span{
+	height: 70%;
+	width: 2px;
+	background-color: $light;
+	transform: rotate(45deg);
+	margin-left: 60px;
+}
+.music-icon{
+	background-size: cover;
+	background-position: center;
+
+	transition: all $fast-trans ease-out;
+}
+.music-icon:hover{
+	transform: scale(1.05);
+}
+#music-spotify{
+	background-image: url(../assets/spotify.png);
+	width: $spotify-icon-size;
+	height: $spotify-icon-size;
+}
+
+#music-soundcloud{
+	background-image: url(../assets/soundcloud.png);
+	width: $soundcloud-icon-size;
+	height: $soundcloud-icon-size;
+}
+
+
+/* CONTACT */
+$contact-logo-size: 12vw;
+
+.contact{
+	padding: 50px 0;
+	background-color: $dark-grey;
+}
+
+.contact .title{
+	color: $light;
+}
+.contact .title h2{
+	font-size: $h1-font-size;
+}
+.contact-card{
+	width: 40vw;
+	height: 350px;
+	margin: 50px 0;
+	background-image: url(../assets/texture.jpg);
+	box-shadow: 0 0 40px 8px $dark;
+}
+.contact-card-logo h3{
+	font-size: $h5-font-size;
+}
+.contact-card-logo-pic{
+	background-image: url(../assets/logo_alt.png);
+	background-size: cover;
+	width: $contact-logo-size;
+	height: $contact-logo-size;
 }
