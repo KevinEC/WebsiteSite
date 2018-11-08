@@ -216,7 +216,7 @@ $title-margin: calc(#{$title-padding} * 2);
 }
 
 /* CHECK OUT MY MUSIC */
-$music-bg-height: 33vh;
+$music-bg-height: 35vh;
 $music-bg-trans: 0.7;
 $spotify-icon-size: 130px;
 $soundcloud-icon-size: ($spotify-icon-size * 1.7);
@@ -301,11 +301,20 @@ $soundcloud-icon-size: ($spotify-icon-size * 1.7);
 
 
 /* CONTACT */
-$contact-logo-size: 12vw;
+
+$contact-logo-size: 11.4vw;
+$contact-icon-size: 30px;
+
+$card-texture-size-x: (300 * 0.5px);
+$card-texture-size-y: (144 * 0.5px);
 
 .contact{
-	padding: 50px 0;
+	padding-top: 50px;
+	padding-bottom: 130px;
 	background-color: $dark-grey;
+	background-image: url(../assets/table.jpg);
+	background-position: center;
+	background-size: 120%;
 }
 
 .contact .title{
@@ -316,17 +325,86 @@ $contact-logo-size: 12vw;
 }
 .contact-card{
 	width: 40vw;
-	height: 350px;
+	height: 370px;
 	margin: 50px 0;
+
+	padding: 2.3rem;
 	background-image: url(../assets/texture.jpg);
-	box-shadow: 0 0 40px 8px $dark;
+	background-size: $card-texture-size-x $card-texture-size-y;
+	box-shadow: 0 0 40px 8px $dark,
+				0 0 30px 8px $dark;
+}
+.contact-card-info {
+	flex-grow: 0.8;
+	padding-left: 3rem;
+	font-weight: 100;
+	font-size: ($h5-font-size * 0.9);
+}
+.card-item {
+	padding: 1rem 0;
+	width: 100%;
+	transition: all $fast-trans ease-out;
+}
+.card-item:hover {
+	cursor: pointer;
+	padding-left:0.3rem;
+	margin-right: -0.3rem;//correct additional width from padding
+}
+.card-item div{
+	background-size: cover;
+	background-position: center;
+	filter: contrast(150%);
+
+	width: $contact-icon-size;
+	height: $contact-icon-size;
+}
+#card-phone{
+	background-image: url(../assets/phone.png);
+	margin-right: 2rem;
+}
+#card-mail{
+	background-image: url(../assets/mail.png);
+	margin-right: 2rem;
+}
+#card-insta{
+	background-image: url(../assets/insta.png);
+	filter: contrast(200%) brightness(-400%);
+	margin-right: 2rem;
+}
+.card-divider{
+	width: 2px;
+	height: 95%;
+	background-color: $dark;
+	margin: 0 2.5rem;
+}
+.contact-card-logo{
+	flex-grow: 1;
+	//actually gets offset but looks more center to me
+	margin-top: .5rem;
 }
 .contact-card-logo h3{
+	padding-left: 0.2rem;
+	font-weight: 100;
 	font-size: $h5-font-size;
+	margin-bottom: 0;
+	color: $primary;
 }
 .contact-card-logo-pic{
 	background-image: url(../assets/logo_alt.png);
 	background-size: cover;
 	width: $contact-logo-size;
 	height: $contact-logo-size;
+	margin-bottom: 1.2rem;
+}
+
+footer nav{
+	padding: 3rem;
+}
+
+footer nav h5{
+	font-size: 1.3rem;
+}
+footer nav h6{
+	margin-top: 1rem;
+	font-size: 1rem;
 }
