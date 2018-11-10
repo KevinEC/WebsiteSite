@@ -2,7 +2,6 @@
 @import "custom_bootstrap";
 
 // Required
-
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
@@ -14,17 +13,29 @@
 @import "~bootstrap/scss/grid";
 
 
+// Bebasnue font
+@font-face {
+  font-family: 'Bebasneue';
+  src: url("../assets/fonts/BebasNeue Regular.ttf") format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+@font-face {
+  font-family: 'Bellaboo';
+  src: url("../assets/fonts/Bellaboo.ttf") format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
+
 // Extract Bootstrap theme colors for easier var names
 $dark: theme-color("dark");
 $primary: theme-color("primary");
+$secondary: theme-color("secondary");
 $off-white: theme-color("off-white");
 $light: theme-color("light");
 $dark-grey: theme-color("dark-grey");
 
 
 // All page css
-@import "home";
 @import "EPK";
+@import "home";
+
 
 
 /* global standards */
@@ -36,3 +47,25 @@ body {
 	padding: 0;
 }
 
+
+$title-padding: 20px;
+$title-margin: calc(#{$title-padding} * 2);
+
+
+.title {
+	width: fit-content;
+	margin-bottom: $title-margin;
+}
+.title h2{
+	font-weight: 600;
+}
+.title::after {
+	content: '';
+	display: block;
+
+	margin-top: $title-padding;
+	width: 100%;
+	height: 3px;
+	border-radius: 1px;
+	background-color: $primary;
+}

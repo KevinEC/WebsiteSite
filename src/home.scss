@@ -12,12 +12,14 @@ header {
 	width: 100%;
 	height: 100vh;
 
-	background-image: url('../assets/views.jpg');
 	background-size: cover;
 	background-position: center;
 }
 header .container{
 	margin-top: 33vh;
+}
+#home-header{
+	background-image: url('../assets/views.jpg');
 }
 
 #logo {
@@ -142,32 +144,12 @@ $pic-margin: calc(#{$qoute-divider-height} * calc(0.2 + 0.333) );
 
 /* ABOUT SECTION */
 
-$title-padding: 20px;
-$title-margin: calc(#{$title-padding} * 2);
-
 .about{
 	//use the same padding here as for pic to match the distance
 	padding-top: $pic-margin;
 	min-height: 75vh;
 }
 
-.title {
-	width: fit-content;
-	margin-bottom: $title-margin;
-}
-.title h2{
-	font-weight: 600;
-}
-.title::after {
-	content: '';
-	display: block;
-
-	margin-top: $title-padding;
-	width: 100%;
-	height: 3px;
-	border-radius: 1px;
-	background-color: $primary;
-}
 
 .about .btn{
 	width: 200px;

@@ -17,15 +17,12 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, "./dist/"),
 		filename: "bundle.js"
-	},/*
+	},
 	devServer: {
 	    contentBase: 'dist/', // Relative directory for base of server
 	    publicPath: '/', // Live-reload
-	    inline: true,
-	    port: process.env.PORT || 3000, // Port Number
-	    host: 'localhost', // Change to '0.0.0.0' for external facing server
 	    historyApiFallback: true,
-  	},*/
+  	},
 	module: {
 		rules: [
 			{ 
@@ -95,6 +92,14 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "./src/index.html",
 			filename: "./index.html"
+		}),
+		new HtmlWebpackPlugin({
+			template: "./src/home.html",
+			filename: "./home.html"
+		}),
+		new HtmlWebpackPlugin({
+			template: "./src/EPK.html",
+			filename: "./EPK.html"
 		}),
 		new MiniCssExtractPlugin({
 			filename: "[name].css",
