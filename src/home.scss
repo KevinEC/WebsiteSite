@@ -1,0 +1,382 @@
+// Additional
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/buttons";
+
+
+
+/* CSS in top down order */
+
+header {
+	width: 100%;
+	height: 100vh;
+
+	background-image: url('../assets/views.jpg');
+	background-size: cover;
+	background-position: center;
+}
+header .container{
+	margin-top: 33vh;
+}
+
+#logo {
+	filter: invert(100%);
+}
+#logo img{
+	width: calc(#{$logo-x} * 0.85);
+	height: calc(#{$logo-y} * 0.85); 
+}
+
+.buttons{
+	width: 300px;
+}
+.btn-trans {
+	padding: 15px 40px;
+	border: 2px solid $light;
+	border-radius: $border-radius;
+	background: transparent;
+	color: $light;
+	cursor: pointer;
+
+	transition-property: border-radius, background, color;
+	transition-duration: $normal-trans;
+	transition-timing-function: ease-in; 
+}
+
+.btn-trans:hover {
+	border-radius: 0px;
+	background: $light;
+	color: $dark;
+}
+
+.scroll{
+	margin-top: auto;
+}
+
+.scroll div {
+	height: 100px;
+	padding-top: 0px;
+
+	transition-property: padding-top;
+	transition-duration: $fast-trans;
+	transition-timing-function: ease-out;
+}
+
+//dummy div to prevent animantion loop
+.scroll div:hover{
+	padding-top: 20px;
+}
+
+.scroll button{
+	width: 100px;
+	height: 70px;
+	background-image: url("../assets/wide_arrow.png"); 
+	background-position: center;
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+/* QOUTE DIVIDER */
+$qoute-divider-height: 25vh;
+//pic size definde by 100% of bg + 30%
+$pic-size: calc(#{$qoute-divider-height} * 1.2);
+// margin defined by pic-size overflow of 30% + an additional third of the bg height
+$pic-margin: calc(#{$qoute-divider-height} * calc(0.2 + 0.333) );
+
+.qoute {
+	background-color: $dark;
+	height: $qoute-divider-height;
+}
+
+.profile-container{
+	width: $pic-size;
+	margin-top: $pic-margin;
+}
+
+.profile-border{
+	border-radius: 100%;
+
+	background-color: rgba($light, 0.6);
+	width: $pic-size;
+	height: $pic-size;
+	overflow: hidden;
+	padding: 0.5rem;
+}
+
+.profile-pic{
+	border-radius: 100%;
+
+	background-image: url(../assets/profile.jpg);
+	background-size: cover;
+	background-position: 30% 50%;
+	width: 100%;
+	height: 100%;
+
+}
+
+.qoute .container{
+	height: 100%;
+}
+.qoute-container{
+	width: 40vw;
+	color: $off-white;
+	//background-color: $primary; low key fire
+}
+.qoute-icon{
+	font-family: 'Times New Roman';
+	font-size: 10rem;
+	font-weight: 700;
+	margin-left: 20px;
+}
+.qoute-text{
+	font-style: italic;
+	font-weight: $font-weight-light;
+	font-size: $h4-font-size; // h5 works great at smaller
+
+	margin-left: 20px;
+	line-height: 1.5;
+}
+
+/* ABOUT SECTION */
+
+$title-padding: 20px;
+$title-margin: calc(#{$title-padding} * 2);
+
+.about{
+	//use the same padding here as for pic to match the distance
+	padding-top: $pic-margin;
+	min-height: 75vh;
+}
+
+.title {
+	width: fit-content;
+	margin-bottom: $title-margin;
+}
+.title h2{
+	font-weight: 600;
+}
+.title::after {
+	content: '';
+	display: block;
+
+	margin-top: $title-padding;
+	width: 100%;
+	height: 3px;
+	border-radius: 1px;
+	background-color: $primary;
+}
+
+.about .btn{
+	width: 200px;
+	margin: 50px auto;
+	color: $light;
+	background-image: url(../assets/arrow.png);
+	background-size: 20%;
+	background-position: 18% 50%;
+	background-repeat: no-repeat;
+
+	transition: background-position $swift-trans ease-out;
+}
+.about .btn:hover{
+	background-position: 22%;
+}
+
+/* CHECK OUT MY MUSIC */
+$music-bg-height: 35vh;
+$music-bg-trans: 0.7;
+$spotify-icon-size: 130px;
+$soundcloud-icon-size: ($spotify-icon-size * 1.7);
+
+.music{
+	height: $music-bg-height;
+}
+//bg image layer
+.music-bg::after{
+	content: '';
+	display: block;
+	height: $music-bg-height;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: -2;
+
+	background-image: url(../assets/bw_photo.jpg);
+	background-position: 50% 0;
+	background-size: cover;
+
+}
+//color layer
+.music-bg::before{
+	content: '';
+	display: block;
+	height: $music-bg-height;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: -1;
+
+	background: linear-gradient(0.3turn, $dark, $primary);
+	opacity: 0.7;
+}
+.music .container{
+	height: 100%;
+}
+.music-text{
+	color: $light;
+}
+.music-text .title h2{
+	font-size: $h1-font-size;
+}
+.music-text h4{
+	font-weight: 200;
+	font-size: $h3-font-size;
+	display: inline-block;
+}
+.music-icons{
+	width: 40vw;
+	height: 100%;
+	margin-left: 5vw;
+}
+.music-icons span{
+	height: 70%;
+	width: 2px;
+	background-color: $light;
+	transform: rotate(45deg);
+	margin-left: 60px;
+}
+.music-icon{
+	background-size: cover;
+	background-position: center;
+
+	transition: all $fast-trans ease-out;
+}
+.music-icon:hover{
+	transform: scale(1.05);
+}
+#music-spotify{
+	background-image: url(../assets/spotify.png);
+	width: $spotify-icon-size;
+	height: $spotify-icon-size;
+}
+
+#music-soundcloud{
+	background-image: url(../assets/soundcloud.png);
+	width: $soundcloud-icon-size;
+	height: $soundcloud-icon-size;
+}
+
+
+/* CONTACT */
+
+$contact-logo-size: 220px;
+$contact-icon-size: 30px;
+
+$card-texture-size-x: (300 * 0.5px);
+$card-texture-size-y: (144 * 0.5px);
+
+.contact{
+	padding-top: 50px;
+	padding-bottom: 130px;
+	background-color: $dark-grey;
+	background-image: url(../assets/table.jpg);
+	background-position: center;
+	background-size: 120%;
+}
+
+.contact .title{
+	color: $light;
+}
+.contact .title h2{
+	font-size: $h1-font-size;
+}
+.contact-card{
+	width: 40vw;
+	height: 370px;
+	margin: 50px 0;
+
+	padding: 2.3rem;
+	padding-left: 5.3rem; 
+	background-image: url(../assets/texture.jpg);
+	background-size: $card-texture-size-x $card-texture-size-y;
+	box-shadow: 0 0 40px 8px $dark,
+				0 0 30px 8px $dark;
+}
+.contact-card-info {
+	//flex-grow: 0.8;
+	font-weight: 100;
+	font-size: ($h5-font-size * 0.9);
+}
+.card-item {
+	padding: 1rem 0;
+	width: 100%;
+	transition: all $fast-trans ease-out;
+}
+.card-item:hover {
+	cursor: pointer;
+	padding-left: 0.3rem;
+	width: calc(100% + 0.3rem); //correct loss of inner width from padding
+	margin-right: -0.3rem; //correct additional width from padding
+}
+.card-item div{
+	background-size: cover;
+	background-position: center;
+	filter: contrast(150%);
+
+	width: $contact-icon-size;
+	height: $contact-icon-size;
+}
+#card-phone{
+	background-image: url(../assets/phone.png);
+	margin-right: 2rem;
+}
+#card-mail{
+	background-image: url(../assets/mail.png);
+	margin-right: 2rem;
+}
+#card-insta{
+	background-image: url(../assets/insta.png);
+	filter: contrast(200%) brightness(-400%);
+	margin-right: 2rem;
+}
+.card-divider{
+	width: 2px;
+	height: 95%;
+	background-color: $dark;
+	margin: 0 2.5rem;
+}
+.contact-card-logo{
+	//actually gets offset but looks more center to me
+	margin-top: .5rem;
+	padding-left: 2.5rem;
+	margin-left: 2.5rem;
+	border-left: 2px solid $dark;
+}
+.contact-card-logo h3{
+	padding-left: 0.2rem;
+	font-weight: 100;
+	font-size: $h5-font-size;
+	margin-bottom: 0;
+	color: $primary;
+}
+.contact-card-logo-pic{
+	background-image: url(../assets/logo_alt.png);
+	background-size: cover;
+	width: $contact-logo-size;
+	height: $contact-logo-size;
+	margin-bottom: 1.2rem;
+}
+
+footer nav{
+	padding: 3rem;
+}
+
+footer nav h5{
+	font-size: 1.3rem;
+}
+footer nav h6{
+	margin-top: 1rem;
+	font-size: 1rem;
+}
