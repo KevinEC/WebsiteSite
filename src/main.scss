@@ -69,3 +69,11 @@ $title-margin: calc(#{$title-padding} * 2);
 	border-radius: 1px;
 	background-color: $primary;
 }
+
+.indent{
+	padding-left: 6.5rem;
+}
+.Bebas{
+	font-family: 'BebasNeue';
+	font-size: ($font-size-base * 1.2);
+}
