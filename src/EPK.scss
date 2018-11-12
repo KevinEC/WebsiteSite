@@ -3,6 +3,7 @@
 	background-size: 120%;
 	background-position: right -16rem top 20%;
 	height: 67vh;
+	min-height: 550px;
 }
 
 $quote-spacing: 1.5rem;
@@ -158,11 +159,13 @@ $biography-bg-height: 71.5vh;
 .biography{
 	color: $light;
 	height: $biography-height;
+	min-height: 600px;
 }
 .biography-bg::before{
 	content: '';
 	width: 100%;
 	height: $biography-bg-height;
+	min-height: 600px;
 	position: absolute;
 	left: 0;
 

@@ -33,13 +33,14 @@ header .container{
 .buttons{
 	width: 300px;
 }
-.btn-trans {
+.btn-trans{
 	padding: 15px 40px;
 	border: 2px solid $light;
 	border-radius: $border-radius;
 	background: transparent;
 	color: $light;
 	cursor: pointer;
+	display: block;
 
 	transition-property: border-radius, background, color;
 	transition-duration: $normal-trans;
@@ -50,6 +51,7 @@ header .container{
 	border-radius: 0px;
 	background: $light;
 	color: $dark;
+	text-decoration: none;
 }
 
 .scroll{
@@ -70,9 +72,10 @@ header .container{
 	padding-top: 20px;
 }
 
-.scroll button{
+.scroll a{
 	width: 100px;
 	height: 70px;
+	display: block;
 	background-image: url("../assets/wide_arrow.png"); 
 	background-position: center;
 	background-size: cover;
@@ -256,35 +259,48 @@ $soundcloud-icon-size: ($spotify-icon-size * 1.7);
 $contact-logo-size: 220px;
 $contact-icon-size: 30px;
 
+$contact-postition: 450px;
+//.75 cuz transform .75
+$contact-position-card: (.8 * $contact-postition);
+
 $card-texture-size-x: (300 * 0.5px);
 $card-texture-size-y: (144 * 0.5px);
 
 .contact{
 	padding-top: 50px;
-	padding-bottom: 130px;
 	background-color: $dark-grey;
 	background-image: url(../assets/table.jpg);
-	background-position: center;
-	background-size: 120%;
+	background-position: left 0% top 50%;
+	background-size: 1920px;
 }
 
 .contact .title{
 	color: $light;
+	
+	margin-left: $contact-postition;
 }
 .contact .title h2{
 	font-size: $h1-font-size;
 }
 .contact-card{
-	width: 40vw;
+	width: 690px;
 	height: 370px;
 	margin: 50px 0;
 
 	padding: 2.3rem;
 	padding-left: 5.3rem; 
+	margin-left: $contact-position-card;
 	background-image: url(../assets/texture.jpg);
 	background-size: $card-texture-size-x $card-texture-size-y;
-	box-shadow: 0 0 40px 8px $dark,
-				0 0 30px 8px $dark;
+	box-shadow: 3px -3px 10px 4px rgba(black, 0.5);
+
+
+	transform: scale(0.75);
+	transition: all 350ms cubic-bezier(.13,-0.4,0,1.07);
+}
+.contact-card:hover{
+	transform: translate3d(50px, -50px, .3vw) rotate(-1deg);
+	box-shadow: 3px -3px 20px 4px rgba(black, 0.3);
 }
 .contact-card-info {
 	//flex-grow: 0.8;
@@ -309,6 +325,13 @@ $card-texture-size-y: (144 * 0.5px);
 
 	width: $contact-icon-size;
 	height: $contact-icon-size;
+}
+.card-item a{
+	color: $dark;
+}
+.card-item a:hover{
+	color: $dark;
+	text-decoration: none;
 }
 #card-phone{
 	background-image: url(../assets/phone.png);

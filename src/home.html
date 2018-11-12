@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-trans">
 		<ul class="navbar-nav w-100">
 			<li class="nav-item active">
-				<a class="nav-link" href="home.html" navigo>Home<span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="home" navigo>Home<span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="EPK" navigo>Electronic Press Kit</a>
@@ -17,17 +17,17 @@
 			<img src="../assets/logo.png"/>
 		</div>
 		<div class="row buttons d-flex justify-content-between">
-			<button type="button" class="btn-trans">About</button>
-			<button type="button" class="btn-trans">Contact</button>
+			<a class="btn-trans" href="#qoute">About</a>
+			<a class="btn-trans" href="#contact">Contact</a>
 		</div>
 	</div>
 	<div class="scroll w-100 d-flex justify-content-center">
 		<div class="d-flex justify-content-center align-self-ends">
-			<button></button>
+			<a href="#qoute"></a>
 		</div>
 	</div>
 </header>
-<section class="qoute ">
+<section class="qoute" id="qoute">
 	<div class="container d-flex  align-items-center">
 		<div class="profile-container d-flex justify-content-center align-items-center">
 			<div class="profile-border">
@@ -53,7 +53,7 @@
 			His sound is a result of cross-generational collaboration, writing alongside a 60-year old Canadian and sometimes his older brother. Many of his fondest experiences and story sources come from couch surfing at the homes of fellow musicians and producers.  Curious to a fault, Bo Henrik plays and arranges all the instruments in his songs, and is grateful to those who put the finishing touches on his work.
 
 		</p>
-		<button type="button" class="btn btn-primary">EPK</button>
+		<a class="btn btn-primary" href="EPK">EPK</a>
 	</div>
 </article>
 <section class="music">
@@ -72,8 +72,8 @@
 		</div>
 	</div>
 </section>
-<section class="contact">
-	<div class="container d-flex justify-content-center flex-column align-items-center">
+<section class="contact" id="contact">
+	<div class="d-flex justify-content-center flex-column">
 		<div class="title">
 			<h2>Contact</h2>
 		</div>
@@ -81,7 +81,7 @@
 			<div class="contact-card-info d-flex flex-column justify-content-center">
 				<!-- add on clikc copy func -->
 				<div class="card-item d-flex align-items-center "><div id="card-phone"></div> +1 778 317 6951</div>
-				<div class="card-item d-flex align-items-center"><div id="card-mail"></div> Me@BoHenrik.com</div>
+				<div class="card-item d-flex align-items-center"><div id="card-mail"></div> <a href="mailto:me@bohenrik.com">Me@BoHenrik.com</a></div>
 				<div class="card-item d-flex align-items-center"><div id="card-insta"></div> BoHenrikMusic</div>
 			</div>
 			<!-- <div class="card-divider"></div> -->
@@ -95,7 +95,7 @@
 <footer>
 	<nav class="bg-dark d-flex flex-column justify-content-center align-items-center">
 		<h5>Bo Henrik Music</h5>
-		<h5>Me@BoHenrik.com</h5>
+		<a href="mailto:me@bohenrik.com">Me@BoHenrik.com</a>
 	  <h6>Design and Coded by Kevin Evans</h6>
 	</nav>
 </footer>

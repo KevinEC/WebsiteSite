@@ -41,7 +41,9 @@ $dark-grey: theme-color("dark-grey");
 /* global standards */
 
 button { cursor: pointer; }
-
+html {
+	scroll-behavior: smooth;
+}
 body {
 	margin: 0;
 	padding: 0;
