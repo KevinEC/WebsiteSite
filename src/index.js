@@ -16,10 +16,10 @@ function loadHTML(url, id) {
     $id(id).innerHTML = req.responseText;
   };
 }
-let root = location.origin + "/";
+let root = location.origin;
 console.log(root);
 // use #! to hash
-let router = new Navigo(root, false, '#!');
+let router = new Navigo(root, true, '#!');
 
 // set the default route
 router.on({'/' : () => { loadHTML('./home.html', 'view'); } });
@@ -29,6 +29,10 @@ router.on({
   'home': () => { loadHTML('./home.html', 'view'); },
   'home#qoute': () => { loadHTML('./home.html#qoute', 'view'); },
   'home#contact': () => { loadHTML('./home.html#contact', 'view'); },
+
+  '#qoute': () => { loadHTML('./home.html#qoute', 'view'); },
+  '#contact': () => { loadHTML('./home.html#contact', 'view'); },
+
   'EPK': () => { loadHTML('./EPK.html', 'view'); },
   'EPK#latest': () => { loadHTML('./EPK.html#latest', 'view'); },
   'EPK#assets': () => { loadHTML('./EPK.html#assets', 'view'); }
