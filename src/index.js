@@ -2,24 +2,53 @@ import style from "./main.scss";
 import Navigo from "Navigo/lib/navigo";
 import "bootstrap";
 import $ from "jquery";
-
-
-
-
-
-/* BOOTSTRAP CAROUSEL */
-
-
-
-
-
-
-
-/* ROUTING */
+import ClipBoardJS from "clipboard";
 
 function $id(id) {
   return document.getElementById(id);
 }
+
+
+
+/* Clipboard */
+window.onload = function() {
+
+  let modal = document.querySelector(".card-notification");
+  let elements = document.querySelectorAll(".card-item");
+  console.log(elements);
+  elements.forEach( function(element) {
+    
+    element.addEventListener("mouseenter", function( event ) {
+
+        modal.setAttribute("style", "display: block;");
+
+    }, false);
+    element.addEventListener("mouseleave", function( event ) {
+
+        modal.setAttribute("style", "display: none;");
+
+    }, false);
+    element.addEventListener("click", function( event ) {
+
+        modal.innerHTML = "Copied!";
+
+    }, false);
+  });
+}
+
+
+let clipboard = new ClipBoardJS('.card-item');
+clipboard.on('success', function(e) {
+
+  e.clearSelection();
+
+
+
+    
+ });
+
+/* ROUTING */
+
 
 // asyncrhonously fetch the html template partial from the file directory,
 // then set its contents to the html of the parent element

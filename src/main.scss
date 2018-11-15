@@ -75,6 +75,31 @@ $title-margin: calc(#{$title-padding} * 2);
 	background-color: $primary;
 }
 
+/* FOOTER */
+
+footer{
+	min-height: 200px;
+}
+footer nav{
+	padding: 3rem;
+	width: fit-content;
+}
+footer nav h6{
+	margin: 0;
+	font-size: 1rem;
+	color: lighten($dark, 10%);
+}
+footer nav h6 a{
+	color: lighten($dark, 10%);
+}
+footer nav span{
+	width: 6px;
+	height: 6px;
+	border-radius: 20px;
+	margin: 0 10px; 
+	background-color: lighten($dark, 20%);
+}
+
 .indent{
 	padding-left: 6.5rem;
 }
