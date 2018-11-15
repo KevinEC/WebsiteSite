@@ -44,6 +44,17 @@ $h6-font-size:                $font-size-base !default;
 $btn-padding-y:               15px;
 $btn-padding-x:				  40px;
 
+/* CAROUSEL */
+.carousel-item{
+	width: 100vw;
+}
+.carousel-item-right{
+	
+}
+.carousel-item-left{
+	//margin-right: 3000px;
+}
+
 /* NAVBAR */
 $navbar-padding-x: 50px;
 $navbar-padding-y: 50px;

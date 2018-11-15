@@ -256,6 +256,8 @@ $stories-button-padding: 20px;
 }
 
 .stories-card{
+	width: 58vw;
+	min-width: 1070px;
 	background-color: $light;
 	height: $stories-card-height;
 	padding: $stories-card-padding;
@@ -268,6 +270,7 @@ $stories-button-padding: 20px;
 	background-image: url(../assets/album.jpg);
 	background-size: cover;
 	background-position: center;
+	overflow: none;
 }
 .stories-card-text{
 	flex: 1;

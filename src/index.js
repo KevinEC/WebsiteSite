@@ -1,6 +1,21 @@
 import style from "./main.scss";
 import Navigo from "Navigo/lib/navigo";
+import "bootstrap";
+import $ from "jquery";
 
+
+
+
+
+/* BOOTSTRAP CAROUSEL */
+
+
+
+
+
+
+
+/* ROUTING */
 
 function $id(id) {
   return document.getElementById(id);
