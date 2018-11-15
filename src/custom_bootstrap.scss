@@ -44,21 +44,10 @@ $h6-font-size:                $font-size-base !default;
 $btn-padding-y:               15px;
 $btn-padding-x:				  40px;
 
-/* CAROUSEL */
-.carousel-item{
-	width: 100vw;
-}
-.carousel-item-right{
-	
-}
-.carousel-item-left{
-	//margin-right: 3000px;
-}
-
 /* NAVBAR */
 $navbar-padding-x: 50px;
 $navbar-padding-y: 50px;
-$navbar-dark-hover-color: theme-color("primary");
+$navbar-dark-hover-color: white;
 $navbar-dark-color: rgba( 255, 255, 255, .75);
 
 .navbar{
@@ -67,12 +56,15 @@ $navbar-dark-color: rgba( 255, 255, 255, .75);
 
 .nav-link {
 	margin: 0px 10px;
+	margin-left: 15px;
 	padding-bottom: 5px;
 	border: none;
+	border-left: 3px solid rgba(0,0,0,0);
+	transition: all .5 ease-in;
 }
 .nav-link:hover {
 	text-decoration: none;
-	border-bottom: 2px solid theme-color("primary");
+	border-left: 3px solid theme-color("off-white");
 }
 
 

@@ -35,7 +35,7 @@ $who-qoute-width: 10%;
 .who{
 	//hack to make rightside of container yellow and leftside dark
 	background: linear-gradient(to right, $dark, $dark 49%, $who-bg-color 51%, $who-bg-color 100%);
-	color: $off-white;
+	
 	height: $who-height;
 	z-index: 5;
 }
@@ -45,6 +45,7 @@ $who-qoute-width: 10%;
 	z-index: 5;
 }
 .who .qoute-icon{
+	color: $off-white;
 	width: $who-qoute-width;
 	z-index: 10;
 	margin-left: (-1 * $who-qoute-width);
@@ -52,6 +53,7 @@ $who-qoute-width: 10%;
 	margin-top: 3rem;
 }
 .who h5{
+	color: white;
 	z-index: 10;
 	font-weight: 100;
 	font-style: italic;
@@ -63,18 +65,25 @@ $who-qoute-width: 10%;
 
 /* LATEST RELEASE */
 $text-align-padding: .5rem;
+
 $latest-height: 66vh;
+$latest-min-height: 500px;
+$latest-height-padding: 2rem;
+
 $album-cover-size: 330px;
 
 .latest{
 	//background: linear-gradient(.5turn, $dark, lighten($dark, 4%));
 	color: $light;
 	height: $latest-height;
+	min-height: $latest-min-height;
 }
+//image
 .latest-bg::after{
 	content: '';
 	display: block;
 	height: $latest-height;
+	min-height: $latest-min-height;
 	width: 100%;
 	position: absolute;
 	left: 0;
@@ -85,11 +94,20 @@ $album-cover-size: 330px;
 	background-size: cover;
 
 }
+.latest-bg video{
+	display: block;
+	height: $latest-height;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: -2;
+}
 //color layer
 .latest-bg::before{
 	content: '';
 	display: block;
 	height: $latest-height;
+	min-height: $latest-min-height;
 	width: 100%;
 	position: absolute;
 	left: 0;
@@ -98,6 +116,7 @@ $album-cover-size: 330px;
 	background: linear-gradient(to right, darken($dark, 7%), darken($dark, 6%) 35%, $dark);
 	opacity: 0.86;
 }
+
 .latest .container{
 	height: $latest-height;
 	padding: 5rem 0;
@@ -210,9 +229,13 @@ $stories-button-padding: 20px;
 .stories{
 	background-color: $primary;
 }
-.stories .container{
+.stories .container:first-child{
 	height: 100%;
 	padding-top: 16.5rem;
+}
+.stories .container:nth-child(2n){
+	height: 100%;
+	padding: 0;
 	padding-bottom: 8rem;
 }
 .stories .title{
@@ -261,7 +284,9 @@ $stories-button-padding: 20px;
 	background-color: $light;
 	height: $stories-card-height;
 	padding: $stories-card-padding;
-	box-shadow: 0 0 20px rgba($dark, 0.3)
+	box-shadow: 0 0 20px rgba($dark, 0.3);
+
+	z-index: 20;
 }
 .stories-card-album{
 	//needs to be the same width to achieve 1:1 aspect ratio
@@ -274,8 +299,7 @@ $stories-button-padding: 20px;
 }
 .stories-card-text{
 	flex: 1;
-	padding-left: 2rem;
-	padding-right: 2rem;
+	padding: 2rem;
 }
 .stories-card-text h3{
 	width: fit-content;

@@ -73,7 +73,11 @@ module.exports = {
 			},
 			{
 				test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-				use: 'file-loader',
+				use: 'file-loader'
+			},
+			{
+		        test: /\.mp4$/,
+		        use: 'file-loader?name=videos/[name].[ext]',
 			},
 			{
 				test: /\.(jpe?g|png|gif|svg)$/i,
