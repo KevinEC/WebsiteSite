@@ -222,8 +222,8 @@ $stories-card-height: 400px;
 $stories-card-padding: .2rem;
 
 //the ratio is 40/380. and the x & y is reversed cuz of transform
-$stories-button-size-x: 40px;
-$stories-button-size-y: (9.5 * $stories-button-size-x);
+$stories-button-size-x: 70px;
+//$stories-button-size-y: (1 * $stories-button-size-x);
 $stories-button-padding: 20px;
 
 .stories{
@@ -235,7 +235,7 @@ $stories-button-padding: 20px;
 }
 .stories .container:nth-child(2n){
 	height: 100%;
-	padding: 0;
+	padding: 0;			// Dirty fix for animation 
 	padding-bottom: 8rem;
 }
 .stories .title{
@@ -253,11 +253,11 @@ $stories-button-padding: 20px;
 	background-color: transparent;
 	background-size: cover;
 	background-position: left 50% top 50%;
-	width: $stories-button-size-y;
+	width: $stories-button-size-x;
 	height: $stories-button-size-x;
 	border: none;
 	margin: 0;
-	padding: 0;
+	padding: 0px 0; //fix for smaller screens capping the icon
 	transition: all $fast-trans ease-out;
 }
 
@@ -279,11 +279,12 @@ $stories-button-padding: 20px;
 }
 
 .stories-card{
-	width: 58vw;
-	min-width: 1070px;
+	//width: 69vw;
+	min-width: 1000px;
 	background-color: $light;
 	height: $stories-card-height;
 	padding: $stories-card-padding;
+	margin-left: 15px;				//Dirty fix for animation
 	box-shadow: 0 0 20px rgba($dark, 0.3);
 
 	z-index: 20;

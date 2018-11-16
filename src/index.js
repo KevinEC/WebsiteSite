@@ -15,6 +15,7 @@ window.onload = function() {
 
   let modal = document.querySelector(".card-notification");
   let elements = document.querySelectorAll(".card-item");
+  let clicked = false;
   console.log(elements);
   elements.forEach( function(element) {
     
@@ -25,12 +26,17 @@ window.onload = function() {
     }, false);
     element.addEventListener("mouseleave", function( event ) {
 
-        modal.setAttribute("style", "display: none;");
+        modal.setAttribute("style", "display: none; background-color: #111111;");
+        if(clicked) modal.innerHTML = "Click to copy";
+        
 
     }, false);
     element.addEventListener("click", function( event ) {
 
         modal.innerHTML = "Copied!";
+        clicked = true;
+        modal.setAttribute("style", "display: block; background-color: #ffd15e;")
+        
 
     }, false);
   });
