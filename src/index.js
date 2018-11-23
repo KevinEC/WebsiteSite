@@ -10,48 +10,60 @@ function $id(id) {
 
 
 
-/* Clipboard */
 window.onload = function() {
 
-  let modal = document.querySelector(".card-notification");
-  let elements = document.querySelectorAll(".card-item");
-  let clicked = false;
-  console.log(elements);
-  elements.forEach( function(element) {
+    /* Clipboard */
+  
+    let modal = document.querySelector(".card-notification");
+    let elements = document.querySelectorAll(".card-item");
+    let clicked = false;
+    elements.forEach( function(element) {
+      
+      element.addEventListener("mouseenter", function( event ) {
+
+          modal.setAttribute("style", "display: block;");
+
+      }, false);
+      element.addEventListener("mouseleave", function( event ) {
+
+          modal.setAttribute("style", "display: none; background-color: #111111;");
+          if(clicked) modal.innerHTML = "Click to copy";
+          
+
+      }, false);
+      element.addEventListener("click", function( event ) {
+
+          modal.innerHTML = "Copied!";
+          clicked = true;
+          modal.setAttribute("style", "display: block; background-color: #ffd15e;")
+          
+
+    }, false);
+
+    /* Modal */
+    $('#galleryModal').on('show.bs.modal', function (e) {
+
+      // get the bgUrl of the clicked element
+      let clickedE = e.relatedTarget.childNodes[0];
+      let bg = $(clickedE).css('background-image');
+
+      // slice string
+      let root = location.origin;
+      let bgUrl = bg.replace(root, '');
+      bgUrl = bgUrl.slice(5,bgUrl.length - 2);
+      bgUrl = bgUrl.replace("_thumb", '');
+
+      console.log(bgUrl);
+
+      //set bg of modal
+      $('#modal-image').attr('src', bgUrl);
+    })
+
+
     
-    element.addEventListener("mouseenter", function( event ) {
-
-        modal.setAttribute("style", "display: block;");
-
-    }, false);
-    element.addEventListener("mouseleave", function( event ) {
-
-        modal.setAttribute("style", "display: none; background-color: #111111;");
-        if(clicked) modal.innerHTML = "Click to copy";
-        
-
-    }, false);
-    element.addEventListener("click", function( event ) {
-
-        modal.innerHTML = "Copied!";
-        clicked = true;
-        modal.setAttribute("style", "display: block; background-color: #ffd15e;")
-        
-
-    }, false);
   });
 }
 
-
-let clipboard = new ClipBoardJS('.card-item');
-clipboard.on('success', function(e) {
-
-  e.clearSelection();
-
-
-
-    
- });
 
 /* ROUTING */
 
