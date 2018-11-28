@@ -8,60 +8,93 @@ function $id(id) {
   return document.getElementById(id);
 }
 
+//enable tooltips
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
+
+let currentPath = "";
+
+    function cardHover(){
+      /* Clipboard */
+
+      console.log("clipboarding");
+      let clipboard = new ClipBoardJS('.copy');
+
+      clipboard.on('success', function(e) {
+      console.info('Action:', e.action);
+      console.info('Text:', e.text);
+      console.info('Trigger:', e.trigger);
+
+      e.clearSelection();
+  });
+  
+      let modal = document.querySelector(".card-notification");
+      let elements = document.querySelectorAll(".copy");
+      let clicked = false;
+
+      if (currentPath == "home")
+      {
+        elements.forEach( function(element) {
+        
+            element.addEventListener("mouseenter", function( event ) {
+
+                console.log('mouseenter');
+                modal.setAttribute("style", "display: block;");
+
+            }, false);
+            element.addEventListener("mouseleave", function( event ) {
+
+                modal.setAttribute("style", "display: none; background-color: #111111;");
+                if(clicked) modal.innerHTML = "Click to copy";
+                
+
+            }, false);
+            element.addEventListener("click", function( event ) {
+
+                modal.innerHTML = "Copied!";
+                clicked = true;
+                modal.setAttribute("style", "display: block; background-color: #ffd15e;")
+                
+
+          }, false);
+            console.log("adding card things");    
+        });
+      }
+    }
 
 
 window.onload = function() {
 
-    /* Clipboard */
+
+  console.log("im running", "path", currentPath);
+
+
+  // call card hover funcionality
+  cardHover();
   
-    let modal = document.querySelector(".card-notification");
-    let elements = document.querySelectorAll(".card-item");
-    let clicked = false;
-    elements.forEach( function(element) {
-      
-      element.addEventListener("mouseenter", function( event ) {
 
-          modal.setAttribute("style", "display: block;");
+ /* Modal */
+ console.log($('#galleryModal'));
+  $('#galleryModal').on('show.bs.modal', function (e) {
 
-      }, false);
-      element.addEventListener("mouseleave", function( event ) {
+    console.log("modal pls");
 
-          modal.setAttribute("style", "display: none; background-color: #111111;");
-          if(clicked) modal.innerHTML = "Click to copy";
-          
+    // get the bgUrl of the clicked element
+    let clickedE = e.relatedTarget.childNodes[0];
+    let bg = $(clickedE).css('background-image');
 
-      }, false);
-      element.addEventListener("click", function( event ) {
+    // slice string
+    let root = location.origin;
+    let bgUrl = bg.replace(root, '');
+    bgUrl = bgUrl.slice(5,bgUrl.length - 2);
+    bgUrl = bgUrl.replace("_thumb", '');
 
-          modal.innerHTML = "Copied!";
-          clicked = true;
-          modal.setAttribute("style", "display: block; background-color: #ffd15e;")
-          
+    console.log(bgUrl);
 
-    }, false);
-
-    /* Modal */
-    $('#galleryModal').on('show.bs.modal', function (e) {
-
-      // get the bgUrl of the clicked element
-      let clickedE = e.relatedTarget.childNodes[0];
-      let bg = $(clickedE).css('background-image');
-
-      // slice string
-      let root = location.origin;
-      let bgUrl = bg.replace(root, '');
-      bgUrl = bgUrl.slice(5,bgUrl.length - 2);
-      bgUrl = bgUrl.replace("_thumb", '');
-
-      console.log(bgUrl);
-
-      //set bg of modal
-      $('#modal-image').attr('src', bgUrl);
+    //set bg of modal
+    $('#modal-image').attr('src', bgUrl);
     })
-
-
-    
-  });
 }
 
 
@@ -79,26 +112,28 @@ function loadHTML(url, id) {
   };
 }
 let root = location.origin;
+
 console.log(root);
 // use #! to hash
 let router = new Navigo(root, true, '#!');
 
 // set the default route
-router.on({'/' : () => { loadHTML('./home.html', 'view'); } });
+router.on({'/' : () => { loadHTML('./home.html', 'view'); currentPath = 'home'; } });
 
 router.on({
   // 'view' is the id of the div element inside which we render the HTML
-  'home': () => { loadHTML('./home.html', 'view'); },
-  'home#qoute': () => { loadHTML('./home.html#qoute', 'view'); },
-  'home#contact': () => { loadHTML('./home.html#contact', 'view'); },
+  'home': () => { loadHTML('./home.html', 'view'); currentPath = 'home'; },
+  'home#qoute': () => { loadHTML('./home.html#qoute', 'view'); if(!currentPath) currentPath = 'home'; },
+  'home#contact': () => { loadHTML('./home.html#contact', 'view'); if(!currentPath) currentPath = 'home'; },
 
-  '#qoute': () => { loadHTML('./home.html#qoute', 'view'); },
-  '#contact': () => { loadHTML('./home.html#contact', 'view'); },
+  '#qoute': () => { loadHTML('./home.html#qoute', 'view'); currentPath = 'home'; },
+  '#contact': () => { loadHTML('./home.html#contact', 'view'); currentPath = 'home'; },
 
-  'EPK': () => { loadHTML('./EPK.html', 'view'); },
-  'EPK#latest': () => { loadHTML('./EPK.html#latest', 'view'); },
-  'EPK#assets': () => { loadHTML('./EPK.html#assets', 'view'); }
+  'EPK': () => { loadHTML('./EPK.html', 'view'); currentPath = 'epk'; },
+  'EPK#latest': () => { loadHTML('./EPK.html#latest', 'view'); currentPath = 'epk'; },
+  'EPK#assets': () => { loadHTML('./EPK.html#assets', 'view'); currentPath = 'epk'; }
 });
+
 
 
 
