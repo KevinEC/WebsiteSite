@@ -292,15 +292,20 @@ $card-texture-size-y: (144 * 0.5px);
 	padding: 2.3rem;
 	padding-left: 5.3rem; 
 	margin-left: $contact-position-card;
-	background-image: url(../assets/texture.jpg);
-	background-size: $card-texture-size-x $card-texture-size-y;
-	box-shadow: 1px 1px 1px 0px darken(desaturate(rgba($off-white, 0.7), 90%), 85%),
-				2px 2px 2px 0px darken(desaturate(rgba($off-white, 0.7), 90%), 80%),
+	background-image: url(../assets/texture3.png);
+	//background-size: $card-texture-size-x $card-texture-size-y;
+	background-size: 2*175px  2*122.5px;
+	box-shadow: 1px 1px 1px darken(desaturate(rgba($off-white, 0.7), 90%), 85%),
+				2px 2px 2px darken(desaturate(rgba($off-white, 0.7), 90%), 80%),
+				3px 3px 3px darken(desaturate(rgba($off-white, 0.7), 90%), 80%),
 				3px 3px 10px 5px rgba(black, 0.5);
 
 
 	transform: scale(0.75) rotate(-0.01deg);
 	transition: all 350ms cubic-bezier(.13,-0.4,0,1.07);
+}
+.contact-card *{
+	opacity: 0.95;
 }
 .contact-card:hover{
 	transform: translate3d(50px, -50px, .2vw) rotate(-1deg);
