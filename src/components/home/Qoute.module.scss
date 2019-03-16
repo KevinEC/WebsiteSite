@@ -1,0 +1,114 @@
+.qoute {
+  background-color: #111111;
+  height: 30vh; }
+/* old profile pic styles
+.profile-container {
+  width: calc(25vh * 1.2);
+  margin-top: calc(25vh * calc(0.2 + 0.333)); }
+
+.profile-border {
+  border-radius: 100%;
+  background-color: rgba(248, 249, 250, 0.6);
+  width: calc(25vh * 1.2);
+  height: calc(25vh * 1.2);
+  overflow: hidden;
+  padding: 0.5rem; }
+
+.profile-pic {
+  border-radius: 100%;
+  background-image: url(../.../assets/profile.jpg);
+  background-size: cover;
+  background-position: 30% 50%;
+  width: 100%;
+  height: 100%; }
+  */
+
+.qoute .container {
+  height: 100%; }
+
+.qoute-container {
+  height: calc(100% - 20px);
+  padding: 10px 0;
+  width: 70vw;
+  color: #fff8e8; }
+
+.qoute-icon {
+  font-family: Times New Roman, Droid Serif;
+  font-size: 10rem;
+  font-weight: 700;
+  line-height: 140px;}
+
+.qoute-text {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.62rem;
+  margin-left: 20px;
+  line-height: 1.5; }
+
+@media (max-width: 1450px) {
+
+  .qoute{
+    height: auto;
+    min-height: 35vh;
+    padding: 3rem 0;
+  }
+  .qoute-container{
+    width: 100%;
+    align-items: flex-start !important;
+  }
+
+}
+
+@media (max-width: 1100px) {
+
+  .qoute-text{
+    font-size: 1.3rem;
+  }
+}
+
+
+@media (max-width: 900px) {
+
+
+
+}
+
+@media (max-width: 725px) {
+
+  .qoute{
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .qoute-text{
+    font-size: 1rem;
+  }
+  .qoute-icon{
+    font-size: 8rem;
+    line-height: 100px;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+
+}
+
+@media (max-width: 400px) {
+
+
+}
+
+@media (max-width: 360px) {
+
+
+}
+
+@media (max-width: 350px) {
+
+
+
+}

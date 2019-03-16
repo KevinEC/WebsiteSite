@@ -1,0 +1,265 @@
+.music {
+  height: 35vh; }
+
+.music-bg::after {
+  content: '';
+  display: block;
+  height: 35vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: -2;
+  background-image: url(../../assets/bw_photoo.jpg);
+  background-position: 50% 0;
+  background-size: cover; }
+
+.music-bg::before {
+  content: '';
+  display: block;
+  height: 35vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(0.3turn, #111111, #ffd15e);
+  opacity: 0.7; }
+
+.music .container {
+  height: 100%; }
+
+.music-text {
+  color: #f8f9fa; }
+
+.music-text .title h2 {
+  font-size: 3.6rem; }
+
+.music-text h4 {
+  font-weight: 200;
+  font-size: 1.8rem;
+  display: inline-block; }
+
+.music-icons {
+  width: 40vw;
+  height: 100%;
+  margin-left: 5vw; }
+
+.music-icons span {
+  height: 70%;
+  width: 2px;
+  background-color: #f8f9fa;
+  transform: rotate(45deg);
+  margin-left: 60px; }
+
+.music-icon {
+  background-size: cover;
+  background-position: center;
+  transition: all 0.1s ease-out; 
+}
+
+.music-icon:hover {
+	transform: scale(1.05); 
+}
+
+
+#music-spotify {
+  background-image: url(../../assets/spotify.png);
+  width: 130px;
+  height: 130px; }
+
+#music-soundcloud {
+  background-image: url(../../assets/soundcloud.png);
+  width: 221px;
+  height: 221px; }
+#music-apple {
+  background-image: url(../../assets/apple.png);
+  width: 110px;
+  height: 110px; }
+
+@media (max-width: 1450px) {
+
+
+}
+
+@media (max-width: 1350px) {
+
+  .music-icons span {
+    margin-left: 0;
+  }
+
+}
+
+@media (max-width: 1100px) {
+
+  .music-icons span {
+    transform: rotate(0deg);
+    width: 0;
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  .music .title{
+    margin-bottom: 10px;
+  }
+  .music .title:after{
+    margin-top: 5px;
+  }
+
+  .music-text .title h2 {
+    font-size: 3rem;
+  }
+  .music-text h4{
+    font-size: 1.4rem;
+    white-space: nowrap;
+  }
+  .music-icons{
+    margin-left: 7%;
+  }
+  .music-icon {
+    margin: 10px;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  #music-spotify{
+    width: 100px;
+    height: 100px;
+  }
+  #music-apple{
+    width: 87px;
+    height: 87px;
+  }
+
+}
+
+@media (max-width: 770px) {
+
+
+
+}
+
+@media (max-width: 725px) {
+
+
+}
+
+@media (max-width: 660px) {
+
+  .music-text .title h2{
+    font-size: 2.6rem;
+  }
+
+}
+
+@media (max-width: 560px) {
+
+  .music{
+    height: 30vh;
+  }
+  .music-bg:before{
+    height: 30vh; 
+  }
+  .music-bg:after{
+    height: 30vh; 
+  }
+
+  .music-text .title h2{
+    font-size: 2.2rem;
+  }
+  .music-text .title {
+    margin-bottom: 0;
+  }
+  .music-text h4{
+    font-size: 1rem;
+  }
+  .music-icons{
+    margin-left: 10%;
+    width: auto;
+  }
+  #music-spotify{
+    width: 80px;
+    height: 80px;
+  }
+  #music-apple{
+    width: 67px;
+    height: 67px;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  .music-icons{
+    margin-left: 5%;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .music{
+    height:25vh;
+  }
+  .music-bg:before{
+    height: 25vh; 
+  }
+  .music-bg:after{
+    height: 25vh; 
+  }
+  .music-text .title h2{
+    font-size: 2rem;
+  }
+  .music-text .title {
+    margin-bottom: 0;
+  }
+  .music-text h4{
+    font-size: 0.9rem;
+  }
+  #music-spotify{
+    width: 60px;
+    height: 60px;
+  }
+  #music-apple{
+    width: 57px;
+    height: 57px;
+  }
+
+
+}
+
+@media (max-width: 360px) {
+
+  .music{
+    height: 25vh;
+    min-height: 200px;
+  }
+  .music-bg:before{
+    height: 25vh; 
+    min-height: 200px;
+  }
+  .music-bg:after{
+    height: 25vh; 
+    min-height: 200px;
+  }
+
+  .music .container{
+  }
+  .music-icons{
+    flex-flow: column;
+    margin-left: 15%;
+    height: auto;
+  }
+  .music-icon{
+  }
+
+
+}
+
+@media (max-width: 350px) {
+
+
+
+}

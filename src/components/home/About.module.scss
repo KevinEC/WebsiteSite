@@ -1,0 +1,133 @@
+.about {
+  padding-top: calc(25vh * calc(0.2 + 0.333));
+  padding-bottom: 5vh;
+  min-height: 75vh;
+  transition: all 0.1s ease-out;
+   }
+.about .container p:nth-of-type(2){
+  padding-bottom: 5vh;
+}
+.about .btn {
+  width: 200px;
+  margin: 50px auto;
+  color: #f8f9fa;
+  background-image: url(../../assets/arrow.png);
+  background-size: 20%;
+  background-position: 18% 50%;
+  background-repeat: no-repeat;
+  transition: background-position 0.07s ease-out; }
+
+.about .btn:hover {
+  background-position: 22%; 
+}
+
+
+
+@media (max-width: 1450px) {
+
+
+}
+
+@media (max-width: 1350px) {
+
+
+}
+
+@media (max-width: 1100px) {
+
+
+}
+
+@media (max-width: 980px) {
+
+
+
+}
+
+@media (max-width: 900px) {
+
+
+
+}
+
+@media (max-width: 770px) {
+
+  .about .container p:nth-of-type(2){
+    display: none;
+  }
+  .btn-expand-wrapper{
+    display: flex !important;
+  }
+
+}
+
+@media (max-width: 725px) {
+
+
+}
+
+@media (max-width: 660px) {
+
+  .about .title h2{
+    font-size: 2rem;
+  }
+
+}
+
+@media (max-width: 560px) {
+
+  .about{
+    padding: 3.5rem 0;
+  }
+  .about .title{
+    margin-bottom: 1.5rem;
+  }
+  .about .title h2{
+    font-size: 1.8rem;
+  }
+  .about p{
+    font-size: 0.9rem;
+  }
+  .about .btn{
+    margin: 2% auto;
+  }
+
+
+}
+
+@media (max-width: 460px) {
+
+  .about .title h2{
+    font-size: 1.6rem;
+  }
+
+  .about .btn{
+    padding: 10px 35px;
+    font-size: 16px;
+    width: 170px;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .about .title h2{
+    font-size: 1.4rem;
+  }
+
+  .about p{
+    font-size: 0.85rem;
+  }
+
+}
+
+@media (max-width: 360px) {
+
+
+}
+
+@media (max-width: 350px) {
+
+
+
+}
