@@ -1,0 +1,190 @@
+
+#epk-header {
+  background-image: url("../../assets/EPK cover.jpg");
+  background-size: 120%;
+  background-position: right -16rem top 20%;
+  background-repeat: no-repeat;
+  height: 67vh;
+  min-height: 550px; }
+
+#epk-header .container {
+  margin-top: 20vh; }
+
+#epk-logo h1 {
+  font-family: 'Bebasneue';
+  color: #f8f9fa;
+  font-size: 7rem; }
+
+#epk-logo span {
+  color: #f8f9fa;
+  font-style: italic;
+  font-weight: lighter;
+  border-left: 4px solid #f8f9fa;
+  padding: .2rem 0;
+  padding-left: 1.5rem;
+  margin-bottom: 3rem; }
+
+
+.buttons {
+  width: 300px; }
+
+.btnTrans {
+  padding: 15px 40px;
+  border: 2px solid #f8f9fa;
+  border-radius: 2px;
+  background: transparent;
+  color: #f8f9fa;
+  cursor: pointer;
+  display: block;
+  transition-property: border-radius, background, color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in; }
+
+.btnTrans:hover {
+  border-radius: 0px;
+  background: #f8f9fa;
+  color: #111111;
+  text-decoration: none; }
+
+
+@media (max-width: 1350px) {
+
+  #epk-header{
+    background-size: cover;
+    background-position: left 50% top 50%;
+  }
+
+
+}
+
+@media (max-width: 1200px) {
+
+  #epk-header .container{
+    margin-top: 10%;
+  }
+  #epk-logo h1{
+    font-size: 6rem;
+  }
+
+}
+
+@media (max-width: 1100px) {
+
+  #epk-header .container{
+    margin-top: 13%;
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  #epk-header{
+    min-height: 0;
+  }
+  #epk-logo h1{
+    font-size: 5rem;
+  }
+  #epk-logo span{
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+
+
+}
+
+@media (max-width: 675px) {
+
+  #epk-header .container{
+    margin-top: 19%;
+  }
+
+}
+
+@media (max-width: 660px) {
+
+  #epk-header .container{
+    margin-top: 16%;
+  }
+  #epk-logo h1{
+    font-size: 4rem;
+  }
+  #epk-logo span{
+    width: 70%;
+  }
+
+}
+
+@media (max-width: 560px) {
+
+  #epk-header .container{
+    margin-top: 22%;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  #epk-header .container{
+    margin-top: 28%;
+  }
+  #epk-logo h1{
+    font-size: 3.5rem;
+  }
+
+  #epk-header .row{
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  #epk-header .container{
+    margin-top: 28%;
+  }
+  #epk-logo h1{
+    font-size: 3rem;
+  }
+  #epk-logo span{
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  #epk-header{
+    min-height: 500px;
+  }
+
+  #epk-header .container{
+    margin-top: 36%;
+  }
+  #epk-logo h1{
+    font-size: 3rem;
+  }
+
+}
+
+@media (max-width: 385px) {
+
+  #epk-header .container{
+    margin-top: 36%;
+  }
+  #epk-logo h1{
+    font-size: 2.7rem;
+  }  
+
+}
+
+@media (max-width: 340px) {
+
+  #epk-header .container{
+    margin-top: 36%;
+  }
+  #epk-logo h1{
+    font-size: 2.3rem;
+  } 
+
+}

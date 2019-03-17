@@ -20,16 +20,14 @@
   padding: 2.3rem;
   padding-left: 5.3rem;
   margin-left: 360px;
-  background-image: url(../../assets/texture.jpg);
-  background-size: 150px 72px;
+  background-image: url(../../assets/texture2.jpg);
+  background-size: 300px 144px;
   box-shadow: 1px 1px 1px 0px rgba(29, 28, 24, 0.7), 2px 2px 2px 0px rgba(43, 41, 36, 0.7), 3px 3px 10px 5px rgba(0, 0, 0, 0.5);
-  -webkit-transform: scale(0.75) rotate(-0.01deg);
-          transform: scale(0.75) rotate(-0.01deg);
+  transform: scale(0.75) rotate(-0.01deg);
   transition: all 350ms cubic-bezier(0.13, -0.4, 0, 1.07); }
 
 .contact-card:hover {
-  -webkit-transform: translate3d(50px, -50px, 0.2vw) rotate(-1deg);
-          transform: translate3d(50px, -50px, 0.2vw) rotate(-1deg);
+  transform: translate3d(50px, -50px, 0.2vw) rotate(-1deg);
   box-shadow: 3px -3px 20px 4px rgba(0, 0, 0, 0.3); }
 
 .contact-card-info {
@@ -160,7 +158,6 @@
   }
   .contact-card:hover{
     transform: scale(.75);
-    box-shadow: none;
   }
 
 }

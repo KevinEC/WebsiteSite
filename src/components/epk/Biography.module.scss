@@ -1,0 +1,217 @@
+.biography {
+  color: #f8f9fa;
+  height: 70vh;
+  min-height: 600px; }
+
+.biography-bg::before {
+  content: '';
+  width: 100%;
+  height: 71.5vh;
+  padding-top: 3rem;
+  min-height: 600px;
+  position: absolute;
+  left: 0;
+  filter: hue-rotate(10deg);
+  background-color: #d1a58a;
+  background-image: url(../../assets/sun.jpg);
+  background-size: 700px;
+  background-position: left 100% bottom -180px;
+  background-repeat: no-repeat;
+  z-index: -5; }
+
+.biography-card {
+  background-color: #f8f9fa;
+  color: #111111;
+  margin-top: -2rem;
+  margin-left: -5rem;
+  padding: 7rem 5rem;
+  padding-bottom: 5rem;
+  box-shadow: 0 0 20px rgba(17, 17, 17, 0.3); }
+
+.biography .title h2 {
+  font-weight: 700; }
+
+.biography p {
+  font-size: 1.125rem;
+  line-height: 2.8rem; }
+
+.biography-indent {
+  margin-left: 2rem; }
+
+@media (max-width: 1350px) {
+
+  .col-8{
+    max-width: 80% !important;
+  }
+
+}
+
+@media (max-width: 1450px) {
+
+  .biography-card{
+    padding: 5rem;
+  }
+  .biography p{
+    font-size: 1.1rem;
+    line-height: 2.6rem;
+  }
+
+}
+
+@media (max-width: 120px) {
+
+  .biography-bg:before{
+    background-position: left 700px bottom -180px;
+  }
+  .col-8{
+    max-width: 90% !important;
+  }
+
+}
+
+@media (max-width: 1100px) {
+
+  .biography .title{
+    margin-bottom: 20px;
+  }
+  .biography .title h2{
+    font-size: 1.8rem;
+  }
+  .biography p{
+    font-size: 1rem;
+    line-height: 2.2rem;
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  .biography{
+    min-height: 0 ;
+  }
+  .biography .container{
+    display: flex;
+    justify-content: center;
+  }
+  .biography-card{
+    max-width: 1000px !important;
+    flex: 0 0 100% !important;
+    margin: 0;
+    margin-top: -4rem;
+  }
+
+
+}
+
+@media (max-width: 770px) {
+
+  .biography-card{
+    padding: 3.5rem;
+  }
+  .biography .title h2{
+    font-size: 1.5rem;
+  }
+
+  .biography p{
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  .biography{
+    height: 60vh;
+  }
+  .biography-bg:before{
+    height: 60vh;
+    min-height: 400px;
+  }
+
+
+}
+
+@media (max-width: 725px) {
+
+  .biography p{
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+  }
+
+}
+
+@media (max-width: 675px) {
+
+  .biography{
+    height: auto;
+    background-color: #caa884;
+  }
+  .biography-bg:before{
+    display: none;
+  }
+  .biography-card{
+    margin-top: -1.5rem;
+    margin-bottom: -1.5rem;
+  }
+  .biography .title h2{
+    font-size: 1.35rem;
+    margin-bottom: 0;
+  }
+  .title::after{
+    margin-top: 10px;
+  }
+  .biography p{
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+  }
+
+}
+
+
+@media (max-width: 560px) {
+
+
+
+}
+
+@media (max-width: 500px) {
+
+
+
+}
+
+@media (max-width: 460px) {
+
+  .biography{
+    background-color: white;
+  }
+  .biography-card{
+    background-color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    padding: 2rem 1rem;
+  }
+  .biography p{
+    margin-bottom: 0;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+
+}
+
+@media (max-width: 385px) {
+
+
+
+}
+
+@media (max-width: 360px) {
+
+
+}
+
+@media (max-width: 350px) {
+
+
+
+}

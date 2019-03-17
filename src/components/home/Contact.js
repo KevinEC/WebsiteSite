@@ -15,6 +15,7 @@ class Contact extends Component {
   }
 
   componentDidMount() {
+
     this.cardHover();
 
   }
@@ -22,13 +23,11 @@ class Contact extends Component {
   cardHover(){
     let clipboard = new ClipBoardJS('.copy',{
       target: function(trigger) {
-        console.log(trigger);
         return trigger.childNodes[1];
       }
     });
 
     clipboard.on('success', function(e) {
-      console.log("clipboard sucess");
       e.clearSelection();
     });
 
